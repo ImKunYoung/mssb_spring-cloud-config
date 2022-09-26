@@ -247,16 +247,64 @@ public class ConfigServerApplication {
 <br/>
 <br/>
 
+## 📋 파일 시스템과 Spring Cloud Config Server 사용
+confsvr/src/main/resources/application.yml 파일에다 애플리케이션 구성 데이터를 보관할 저장소를 지정함
+
+#### ✏ confsvr/src/main/resources/application.yml
+```yaml
+_server:
+   port: 8888
+spring:
+  profiles:
+    active: native
+  cloud:
+     config:
+       server:
+           native:
+              searchLocations: file://<chapter 3>/confsvr/src/main/resources/config/licensingservice,
+                               file://<chapter 3>confsvr/src/main/resources/config/organizationservice_
+```
+
+|키워드| 설명                          |
+|:---|:----------------------------|
+|port: 8888| 스프링 클라우드 컨피그 서버가 수신 대기하는 포트 |
+|active: native| 구성 정보를 저장할 백엔드 저장소 (파일 시스템) |
+|searchLocations: https://github.com/ImKunYoung/mssb_spring-cloud-config.git| 구성 파일이 저장된 경로               |
 
 
+<br/>
 
+- ✔ 구성 요청을 수신 대기할 포트 번호 지정
+```yaml
+server:
+   port: 8888
+```
 
+<br/>
 
+- ✔ 애플리케이션의 구성 정보가 파일 시스템에 담겨있기 때문에 스프링 클라우드 컨피그 서버에 native 프로파일을 실행하도록 지시
+```yaml
+spring:
+  profiles:
+    active: native
+```
 
+<br/>
 
+- ✔ Spring Cloud Config에 애플리케이션 데이터가 있는 디렉터리 지정
+```yaml
+spring:
+  cloud:
+     config:
+       server:
+         native:
+           searchLocations: file://<chapter 3>/confsvr/src/main/resources/config/licensingservice,
+                            file://<chapter 3>confsvr/src/main/resources/config/organizationservice_
+```
 
+> 컨피그 서버가 관리하는 프로퍼티를 가진 각 애플리케이션의 디렉터리를 쉼표(,) 로 구분해 넣음
 
-
+<br/>
 
 
 
