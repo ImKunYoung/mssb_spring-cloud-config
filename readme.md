@@ -140,4 +140,4 @@
 | <version>2.7.4</version>                                     | 사용할 스프링 부트 버전             |
 | spring-cloud-dependencies                                    | 사용할 스프링 클라우드 버전           |
 | spring-cloud-config-server <br/> spring-cloud-starter-config | 이 서비스에 사용할 스프링 클라우드 프로젝트들 |
-|                                                              ||
+| com.thoughtmechanix.licenses.Application                                                             | 컨피그 서버용 부트스트랩 클래스         |
