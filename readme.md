@@ -210,16 +210,42 @@ redis.port: "6379"
 signing.key: "345345fsdfsf5345"
 ```
 
+<br/>
+<br/>
+<br/>
 
 
+## 📋 Spring Cloud Config BootStrap Class 생성
 
+> #### ❓ BootStrap
+> 일반적으로 BootStrap이란 어떠한 과정이 시작되어 알아서 진행되는 일련의 과정을 말함 
 
+<br/>
 
+#### ✏ confsvr/src/main/java/com/thoughtmechanix/confsvr/ConfigServerApplication.java
+```java
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.config.server.EnableConfigServer;
 
+@SpringBootApplication
+@EnableConfigServer
+public class ConfigServerApplication {
+	public static void main(String[] args) {
+		SpringApplication.run(ConfigServerApplication.class, args);
+	}
+}
+```
 
+|키워드| 설명                                                                       |
+|:---|:-------------------------------------------------------------------------|
+|@SpringBootApplication| Spring Cloud Config Service는 스프링 부트 애플리케이션이므로 @SpringBootApplication을 사용 |
+|@EnableConfigServer| @EnableConfigServer는 서비스를 Spring Cloud Config 서비스로 사용 가능하게 한다.           |
+|main(String[] args)| main() 메서드에서 서비스와 스프링 컨테이너를 시작한다.                                        |
 
-
-
+<br/>
+<br/>
+<br/>
 
 
 
