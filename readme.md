@@ -336,10 +336,35 @@ spring:
 
 
 <br/>
+<br/>
 
-#### ✏ 스
+### ✔ 스프링 클라우드 컨피그 서버의 의존성 설정
 
+<br/>
 
+#### ✏ 라이선싱 서비스에 의존성 추가
+```xml
+<dependencies>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-config-client</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>42.2.4</version>
+    </dependency>
+</dependencies>
+```
+| 키워드                                                   | 설명                                                |
+|:------------------------------------------------------|:--------------------------------------------------|
+| `<artifactId>spring-boot-starter-data-jpa</artifactId>` | 스프링 부트에 Java Persistance API (JPA) 사용을 지시한다       |
+| `<artifactId>postgresql</artifactId>`                   | 스프링 부트에 Postgres JDBC 드라이버를 내려받오록 지시한다            |
+| `<artifactId>spring-cloud-config-client</artifactId>`                  | 스프링 부트에 스프링 클라우드 컨피그 클라이언트가 되는데 필요한 의존성을 내려받도록 지시 |
 
 
 
