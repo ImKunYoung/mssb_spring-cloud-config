@@ -3,7 +3,7 @@
 
 <br/> 
 
-## 📋 spring-cloud-starter-config 라이브러리 추가
+# ⭐ spring-cloud-starter-config 라이브러리 추가
 
 ### ✏ 라이브러리
 ```xml
@@ -172,7 +172,7 @@ spring:
 <br/>
 <br/>
 
-## 📋 구성 데이터를 보관할 백엔드 저장소 지정
+# ⭐ 구성 데이터를 보관할 백엔드 저장소 지정
 빌드한 라이선싱 서비스를 Spring Cloud Config를 사용하는데 활용할 것인데, 간결하게 만들기 위해 로컬, 개발, 운영 환경을 위한 구성 데이터를 설정해보자
 
 <br/>
@@ -215,7 +215,7 @@ signing.key: "345345fsdfsf5345"
 <br/>
 
 
-## 📋 Spring Cloud Config BootStrap Class 생성
+# ⭐ Spring Cloud Config BootStrap Class 생성
 
 > #### ❓ BootStrap
 > 일반적으로 BootStrap이란 어떠한 과정이 시작되어 알아서 진행되는 일련의 과정을 말함 
@@ -247,7 +247,7 @@ public class ConfigServerApplication {
 <br/>
 <br/>
 
-## 📋 파일 시스템과 Spring Cloud Config Server 사용
+# ⭐ 파일 시스템과 Spring Cloud Config Server 사용
 confsvr/src/main/resources/application.yml 파일에다 애플리케이션 구성 데이터를 보관할 저장소를 지정함
 
 #### ✏ confsvr/src/main/resources/application.yml
@@ -274,7 +274,7 @@ spring:
 
 <br/>
 
-- ✔ 구성 요청을 수신 대기할 포트 번호 지정
+#### ✏ 구성 요청을 수신 대기할 포트 번호 지정
 ```yaml
 server:
    port: 8888
@@ -282,7 +282,7 @@ server:
 
 <br/>
 
-- ✔ 애플리케이션의 구성 정보가 파일 시스템에 담겨있기 때문에 스프링 클라우드 컨피그 서버에 native 프로파일을 실행하도록 지시
+#### ✏ 애플리케이션의 구성 정보가 파일 시스템에 담겨있기 때문에 스프링 클라우드 컨피그 서버에 native 프로파일을 실행하도록 지시
 ```yaml
 spring:
   profiles:
@@ -291,7 +291,7 @@ spring:
 
 <br/>
 
-- ✔ Spring Cloud Config에 애플리케이션 데이터가 있는 디렉터리 지정
+#### ✏ Spring Cloud Config에 애플리케이션 데이터가 있는 디렉터리 지정
 ```yaml
 spring:
   cloud:
@@ -306,13 +306,13 @@ spring:
 
 <br/>
 
-- ✔ 실행
+#### ✏ 실행
 
 ```mvn spring-boot:run```
 
 <br/>
 
-- ✔ 테스트
+#### ✏ 테스트
 
 ![](readmefile/img_2.png)
 
@@ -324,14 +324,20 @@ spring:
 
 > 스프링 프레임워크가 프로퍼티를 찾을 때 default 프로퍼티를 찾고 다음 환경의 프로퍼티가 있다면 다음 프로퍼티로 대체한다.
 
+<br/>
+<br/>
+<br/>
 
 
+# ⭐ Spring Cloud Config와 Spring-Boot Client 통합
+스프링 데이터 (Spring Data)를 사용해 데이터베이스와 통신하고 라이선싱 테이블의 데이터를 POJO와 매핑한다
+
+![](readmefile/img_4.png)
 
 
+<br/>
 
-
-
-
+#### ✏ 스
 
 
 
