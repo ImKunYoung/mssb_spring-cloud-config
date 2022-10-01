@@ -176,6 +176,7 @@ spring:
 빌드한 라이선싱 서비스를 Spring Cloud Config를 사용하는데 활용할 것인데, 간결하게 만들기 위해 로컬, 개발, 운영 환경을 위한 구성 데이터를 설정해보자
 
 <br/>
+<br/>
 
 ### ✔ 각 환경에 두 가지 구성 프로퍼티 설정
 > - 라이선싱 서비스가 직접 사용할 예제 프로퍼티
@@ -365,6 +366,97 @@ spring:
 | `<artifactId>spring-boot-starter-data-jpa</artifactId>` | 스프링 부트에 Java Persistance API (JPA) 사용을 지시한다       |
 | `<artifactId>postgresql</artifactId>`                   | 스프링 부트에 Postgres JDBC 드라이버를 내려받오록 지시한다            |
 | `<artifactId>spring-cloud-config-client</artifactId>`                  | 스프링 부트에 스프링 클라우드 컨피그 클라이언트가 되는데 필요한 의존성을 내려받도록 지시 |
+
+<br/>
+<br/>
+
+### ✔ 스프링 클라우드 컨피그를 위한 라이선싱 서비스 구현
+라이선싱 서비스에 스프링 클라우드 컨피그 서버의 위치를 알려준다. (bootstrap.yml, application.yml 파일 중 한 곳에 설정)
+
+> - bootstrap.yml
+> 구성 정보가 사용되기 전에 애플리케이션 프로퍼티를 먼저 읽음.
+> 일반적으로 서비스 애플리케이션 이름, 애플리케이션 프로파일, 스프링 클라우드 컨피그 서버 접속 URI가 명시됨
+> 
+> - application.yml
+> 로컬에 유지하고 싶은 서비스 구성 정보가 저장됨. 스프링 클라우드 컨피그 서비스가 가용하지 않을 때 사용할 수 있는 구성 데이터도 저장할 수 있다.
+
+
+<br/>
+
+#### ✏ 라이선싱 서비스에 의존성 추가
+
+```yaml
+spring:
+  application:
+    name: licensingservice
+  profiles:
+    active:
+      default
+  cloud:
+    config:
+      uri: http://localhost:8888
+```
+
+| 키워드                                           | 내용                                                        |
+|:----------------------------------------------|:----------------------------------------------------------|
+| spring.application.name=licensingservice      | 스프링 클라우드 컨피그 클라이언트가 어떤 서비스를 조회할지 알 수 있도록 라이선싱 서비스 이름을 지칭함 |
+| spring.profiles.active=default                | 서비스가 실행할 기본 프로파일을 지정. 프로파일은 환경에 매핑됨                       |
+| spring.cloud.config.uri=http://localhost:8888 | 스프링 클라우드 컨피그 서버의 위치를 지정                                   |
+
+
+> spring.application.name은 애프리케이션 이름이며 스프링 클라우드 컨피그 서버의 디렉터리 이름과 일치해야 함 <br/>
+> spring.profiles.active는 스프링 부트에 애플리케이션이 어떤 프로파일에서 실행될지 알려준다. <br/>
+> 프로파일 (profile)은 스프링 부트 애플리케이션이 사용하는 구성 데이터를 구분하는 매커니즘임. <br/>
+
+<br/>
+<br/>
+
+### ✔ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
